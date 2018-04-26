@@ -25,6 +25,6 @@ const ListWrapper = styled.section`
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
-    grid-row: 2
+    grid-row: 2 / 3
     grid-column: 1 / 3;
 `

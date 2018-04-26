@@ -4,7 +4,9 @@ import styled from "styled-components";
 class Checkout extends Component {
     render() {
         return (
-            <CheckoutContainer />
+            <CheckoutContainer>
+                {props.children}
+            </CheckoutContainer>
         )
     }
 }
@@ -12,7 +14,7 @@ class Checkout extends Component {
 export default Checkout;
 
 const CheckoutContainer = styled.div`
-    grid-row: 2;
+    grid-row: 2 / 3;
     grid-column: 3 / 4;
-    border: 1px solid #e3e3e3;
+    border: 1px solid #999;
 `
