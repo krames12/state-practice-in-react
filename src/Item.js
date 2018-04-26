@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Item = ({ item }) => (
-    <div className="item-box">
+    <ItemWrapper>
         <p>{item.name}</p>
         <p>${item.price}</p>
-    </div>
+    </ItemWrapper>
 );
 
 export default Item;
@@ -15,3 +16,7 @@ Item.propTypes = {
         name: PropTypes.string.isRequired,
     }).isRequired,
 };
+
+const ItemWrapper = styled.div`
+    border: 1px solid black;
+`

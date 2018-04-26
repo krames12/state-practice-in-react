@@ -10,12 +10,15 @@ class ItemList extends Component {
 
     render() {
         return (
-            <div className="item-list-container">
-                <p>things and stuff</p>
+            <ListWrapper>
                 {this.state.items.map( (item) => <Item key={item.id} item={item} />)}
-            </div>
+            </ListWrapper>
         );
     }
 }
 
 export default ItemList;
+
+const ListWrapper = styled.section`
+    display: grid;
+`
