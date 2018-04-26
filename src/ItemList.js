@@ -23,9 +23,7 @@ class ItemList extends Component {
         return (
             <ListWrapper onClick={ this.logClick } >
                 {
-                    this.state.items.map( 
-                        item => <Item key={item.id} item={item}  />
-                    )
+                    this.state.items.map( item => <Item key={item.id} item={item}  /> )
                 }
             </ListWrapper>
         );
