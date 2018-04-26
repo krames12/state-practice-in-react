@@ -10,3 +10,8 @@ const Item = ({ item }) => (
 
 export default Item;
 
+Item.propTypes = {
+    item: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+    }).isRequired,
+};
