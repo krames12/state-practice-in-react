@@ -1,24 +1,9 @@
 import React, { Component } from 'react';
+import itemArray from './itemArray';
 
 class ItemList extends Component {
     state = {
-        "items": [
-            {
-                "id": 1,
-                "name": "Can",
-                "price": 1.42
-            },
-            {
-                "id": 2,
-                "name": "Latte",
-                "price": 5.43
-            },
-            {
-                "id": 3,
-                "name": "Cup O Noodle",
-                "price": 0.87
-            },
-        ]
+        "items": itemArray
     }
 
     render() {
