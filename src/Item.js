@@ -2,9 +2,25 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Item = ({ item }) => (
-    <ItemSquare>{item.name}</ItemSquare>
-);
+class Item extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            qty: 0,
+            price: 0
+        };
+    }
+
+    logThis = () => {
+        console.log("Props:",this.props," State:", this.state);
+    }
+
+    render() {
+        return(
+            <ItemSquare onClick={ this.logThis.bind(this) } >{this.props.item.name}</ItemSquare>
+        )
+    }
+}
 
 export default Item;
 

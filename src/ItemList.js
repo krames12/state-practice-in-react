@@ -7,21 +7,24 @@ class ItemList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            "items": itemArray
+            "items": itemArray,
+            "toggle": true
         }
         this.logClick = this.logClick.bind(this);
     }
 
     logClick () {
-        console.log("clicked");
+        this.setState(prevState => ({
+            toggle: !prevState.toggle
+        }));
     }
 
     render() {
         return (
-            <ListWrapper>
+            <ListWrapper onClick={ this.logClick } >
                 {
                     this.state.items.map( 
-                        item => <Item key={item.id} item={item} onClick={ () => this.logClick(item)} />
+                        item => <Item key={item.id} item={item}  />
                     )
                 }
             </ListWrapper>
