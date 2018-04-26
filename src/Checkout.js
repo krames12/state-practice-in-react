@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 
 class Checkout extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    state = {};
+    
+    componentDidMount() {
+        this.setState({children: []});
+    }
+
     render() {
         return (
             <CheckoutContainer>
-                {props.children}
+                {this.state.children}
             </CheckoutContainer>
         )
     }

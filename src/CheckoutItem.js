@@ -3,8 +3,13 @@ import TrashCan from 'react-feather';
 import styled from 'styled-components';
 
 class CheckoutItem extends Compontent {
-    state = {
-        qty: 0
+    constructor(props) {
+        super(props);
+        this.state = {qty: 0};
+    }
+
+    componentDidMount() {
+        
     }
 
     render() {
