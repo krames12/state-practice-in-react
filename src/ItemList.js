@@ -21,4 +21,7 @@ export default ItemList;
 
 const ListWrapper = styled.section`
     display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 1rem;
 `
