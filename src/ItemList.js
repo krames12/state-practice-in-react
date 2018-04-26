@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import itemArray from './itemArray';
+import Item from './Item';
 
 class ItemList extends Component {
     state = {
@@ -10,7 +11,7 @@ class ItemList extends Component {
         return (
             <div className="item-list-container">
                 <p>things and stuff</p>
-                {this.state.items.map( (item) => <p key={item.id}>{item.name} - {item.price}</p>)}
+                {this.state.items.map( (item) => <Item key={item.id} item={item} />)}
             </div>
         );
     }
