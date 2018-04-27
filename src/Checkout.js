@@ -14,7 +14,7 @@ class Checkout extends Component {
 
     render() {
         return (
-            <CheckoutContainer>
+            <CheckoutContainer id="checkout-container">
                 {this.state.children}
             </CheckoutContainer>
         )

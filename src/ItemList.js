@@ -10,20 +10,13 @@ class ItemList extends Component {
             "items": itemArray,
             "toggle": true
         }
-        this.logClick = this.logClick.bind(this);
-    }
-
-    logClick () {
-        this.setState(prevState => ({
-            toggle: !prevState.toggle
-        }));
     }
 
     render() {
         return (
-            <ListWrapper onClick={ this.logClick } >
+            <ListWrapper>
                 {
-                    this.state.items.map( item => <Item key={item.id} item={item}  /> )
+                    this.state.items.map( item => <Item key={item.id} item={item} /> )
                 }
             </ListWrapper>
         );
