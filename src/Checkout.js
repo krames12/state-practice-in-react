@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import { Context, Provider } from './CheckoutContext';
+import CheckoutItem from './CheckoutItem'
 
 class Checkout extends Component {
     constructor(props) {
@@ -15,7 +17,13 @@ class Checkout extends Component {
     render() {
         return (
             <CheckoutContainer id="checkout-container">
-                {this.state.children}
+                <Context.Consumer>
+                    { (context) => {
+                        context.state.products.map(
+                            (product) => <CheckoutItem product />
+                        )
+                    } }
+                </Context.Consumer>
             </CheckoutContainer>
         )
     }

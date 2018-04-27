@@ -1,11 +1,10 @@
-import React, { Compontent } from 'react';
+import React, { Component } from 'react';
 import TrashCan from 'react-feather';
 import styled from 'styled-components';
 
-class CheckoutItem extends Compontent {
+class CheckoutItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {qty: 0};
     }
 
     componentDidMount() {
@@ -16,8 +15,8 @@ class CheckoutItem extends Compontent {
         return (
             <ItemContainer>
                 <TrashCan />
-                <span>{item.name}</span> 
-                <span>{this.state.qty}</span>       
+                <span>{this.props.name}</span> 
+                <span>{this.props.qty}</span>       
             </ItemContainer>
         )
     }

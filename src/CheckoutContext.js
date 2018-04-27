@@ -15,11 +15,14 @@ class CheckoutProvider extends Component {
 
     render() {
         return(
-            <CheckoutContext.Provider value="Let's test the waters.">
+            <CheckoutContext.Provider value={{
+                state: this.state
+            }}>
                 {this.props.children}
             </CheckoutContext.Provider>
         )
     }
 }
 
-export default CheckoutProvider;
+export const Provider = CheckoutProvider;
+export const Context = CheckoutContext;
