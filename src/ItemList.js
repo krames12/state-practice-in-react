@@ -8,7 +8,6 @@ class ItemList extends Component {
         super(props);
         this.state = {
             "items": itemArray,
-            "toggle": true
         }
     }
 

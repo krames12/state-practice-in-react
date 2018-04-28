@@ -11,13 +11,13 @@ class Item extends Component {
         };
     }
 
-    logThis = () => {
-        console.log("Props:",this.props," State:", this.state);
+    addItem = () => {
+        console.log(this.props.item);
     }
 
     render() {
         return(
-            <ItemSquare onClick={ this.logThis.bind(this) } >{this.props.item.name}</ItemSquare>
+            <ItemSquare onClick={ this.addItem.bind(this) } >{this.props.item.name}</ItemSquare>
         )
     }
 }

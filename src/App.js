@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ItemList from './ItemList';
 import Checkout from './Checkout';
 import { Context, Provider } from './CheckoutContext';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
