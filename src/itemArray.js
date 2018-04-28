@@ -34,6 +34,11 @@ const itemArray = [
         "name": "Oatmeal",
         "price": 1.44
     },
+    {
+        "id": 8,
+        "name": "Pancakes",
+        "price": 6.74
+    },
 ];
 
 export default itemArray;

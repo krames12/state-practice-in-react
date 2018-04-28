@@ -13,6 +13,10 @@ class CheckoutProvider extends Component {
         ]
     }
 
+    addItem(item) {
+        this.setState()
+    }
+
     render() {
         return(
             <CheckoutContext.Provider value={{
