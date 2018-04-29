@@ -20,7 +20,7 @@ class Checkout extends Component {
             <CheckoutContainer id="checkout-container">
                 <Context.Consumer>
                     { (context) => context.state.products.map(
-                            product => <p>{product.name} - {product.price}</p>
+                            product => <CheckoutItem key={product.id} {...product}  />
                      ) }
                 </Context.Consumer>
 

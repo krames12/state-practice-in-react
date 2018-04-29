@@ -8,7 +8,8 @@ class CheckoutProvider extends Component {
             {
                 "id": 0,
                 "name": "Giant Sweet Tarts",
-                "price": "3.22"
+                "price": "3.22",
+                "qty": 1
             }
         ]
     }
