@@ -18,8 +18,12 @@ class ItemList extends Component {
                 {
                     ({ addItem }) => (
                         <ListWrapper>
-                            { this.state.items.map( 
-                                item => <Item key={item.id} item={item} onClick={addItem} /> 
+                            { this.state.items.map(
+                                item => <Item
+                                            key={item.id}
+                                            name={item.name}
+                                            clickHandler={() => addItem(item)}
+                                        />
                             ) }
                         </ListWrapper>
                     )

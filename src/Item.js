@@ -14,22 +14,17 @@ class Item extends Component {
 
     render() {
         return(
-            <CheckoutConsumer>
-                {
-                    ({ addItem }) => <ItemSquare onClick={ () => addItem(this.props.item)} key={this.props.item.id} >{this.props.item.name}</ItemSquare>
-                }
-            </CheckoutConsumer>
+            <ItemSquare
+                key={this.props.id}
+                onClick={() => this.props.clickHandler}
+            >
+            {this.props.name}
+            </ItemSquare>
         )
     }
 }
 
 export default Item;
-
-Item.propTypes = {
-    item: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-    }).isRequired,
-};
 
 const ItemSquare = styled.button`
     padding: 10px;
