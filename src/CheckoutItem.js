@@ -9,8 +9,7 @@ class CheckoutItem extends Component {
     render() {
         return (
             <ItemContainer>
-                <span>{this.props.name}</span>
-                <span>{this.props.qty}</span>
+                <span>{this.props.name}</span> - <span>{this.props.qty}</span>
             </ItemContainer>
         )
     }

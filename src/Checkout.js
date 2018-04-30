@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import { Context } from './CheckoutContext';
+import { CheckoutConsumer } from './CheckoutContext';
 import CheckoutItem from './CheckoutItem'
 import ProductList from './itemArray';
 
@@ -14,11 +14,11 @@ class Checkout extends Component {
     render() {
         return (
             <CheckoutContainer id="checkout-container">
-                <Context.Consumer>
-                    { (context) => context.state.cartItems.map(
+                <CheckoutConsumer.Consumer>
+                    { ({items, actions}) => items.map(
                             product => <CheckoutItem key={product.id} {...product} />
                      ) }
-                </Context.Consumer>
+                </CheckoutConsumer.Consumer>
 
             </CheckoutContainer>
         )

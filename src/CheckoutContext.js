@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-const CheckoutContext = React.createContext();
+const CONTEXT_ID = 'shopping-cart';
+const { Consumer, Provider } = React.createContext(CONTEXT_ID);
 
 class CheckoutProvider extends Component {
     state = {
@@ -12,31 +13,31 @@ class CheckoutProvider extends Component {
               "qty": 1
           }
         ],
-    }
-
+      }
+    
+      addItem = (item) => {
+        let newItem = {
+            ...item,
+            "qty": 1,
+        }
+    
+        this.setState({ cartItems: [
+            ...this.state.cartItems,
+            newItem
+        ] });
+      }
+    
     render() {
         return(
-            <CheckoutContext.Provider value={{
-                state: this.state,
-                actions: {
-                    addItem: (item) => {
-                        let newItem = {
-                            ...item,
-                            "qty": 1,
-                        }
-
-                        this.setState({ cartItems: [
-                            ...this.state.cartItems,
-                            newItem
-                        ] });
-                    }
-                }
+            <Provider value={{
+                items: this.state.cartItems,
+                addItem: this.addItem,
             }}>
                 {this.props.children}
-            </CheckoutContext.Provider>
+            </Provider>
         )
     }
 }
 
-export const Provider = CheckoutProvider;
-export const Context = CheckoutContext;
+export const CheckoutConsumer = Consumer;
+export default CheckoutProvider;
