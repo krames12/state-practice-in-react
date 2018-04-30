@@ -16,7 +16,7 @@ class Item extends Component {
         return(
             <CheckoutConsumer>
                 {
-                    ({ addItem }) => <ItemSquare onClick={addItem} key={this.props.item.id} >{this.props.item.name}</ItemSquare>
+                    ({ addItem }) => <ItemSquare onClick={ () => addItem(this.props.item)} key={this.props.item.id} >{this.props.item.name}</ItemSquare>
                 }
             </CheckoutConsumer>
         )
