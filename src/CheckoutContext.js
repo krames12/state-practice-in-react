@@ -4,24 +4,33 @@ const CheckoutContext = React.createContext();
 
 class CheckoutProvider extends Component {
     state = {
-        products: [
-            {
-                "id": 0,
-                "name": "Giant Sweet Tarts",
-                "price": "3.22",
-                "qty": 1
-            }
-        ]
-    }
-
-    addItem(item) {
-        this.setState()
+        cartItems: [
+          {
+              "id": 0,
+              "name": "Giant Sweet Tarts",
+              "price": "3.22",
+              "qty": 1
+          }
+        ],
     }
 
     render() {
         return(
             <CheckoutContext.Provider value={{
-                state: this.state
+                state: this.state,
+                actions: {
+                    addItem: (item) => {
+                        let newItem = {
+                            ...item,
+                            "qty": 1,
+                        }
+
+                        this.setState({ cartItems: [
+                            ...this.state.cartItems,
+                            newItem
+                        ] });
+                    }
+                }
             }}>
                 {this.props.children}
             </CheckoutContext.Provider>

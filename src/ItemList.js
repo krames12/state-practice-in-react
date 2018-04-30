@@ -14,9 +14,7 @@ class ItemList extends Component {
     render() {
         return (
             <ListWrapper>
-                {
-                    this.state.items.map( item => <Item key={item.id} item={item} /> )
-                }
+                { this.state.items.map( item => <Item key={item.id} item={item} /> ) }
             </ListWrapper>
         );
     }

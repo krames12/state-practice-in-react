@@ -6,10 +6,6 @@ class CheckoutItem extends Component {
         super(props);
     }
 
-    componentDidMount() {
-
-    }
-
     render() {
         return (
             <ItemContainer>

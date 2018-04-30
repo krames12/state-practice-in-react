@@ -11,16 +11,12 @@ class Checkout extends Component {
 
     state = {};
 
-    componentDidMount() {
-        this.setState({children: ProductList});
-    }
-
     render() {
         return (
             <CheckoutContainer id="checkout-container">
                 <Context.Consumer>
-                    { (context) => context.state.products.map(
-                            product => <CheckoutItem key={product.id} {...product}  />
+                    { (context) => context.state.cartItems.map(
+                            product => <CheckoutItem key={product.id} {...product} />
                      ) }
                 </Context.Consumer>
 
