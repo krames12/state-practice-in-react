@@ -16,8 +16,9 @@ class CheckoutProvider extends Component {
       }
     
       addItem = (item) => {
+          console.log("item", item);
         let newItem = {
-            ...item,
+            "name": item.name,
             "qty": 1,
         }
     

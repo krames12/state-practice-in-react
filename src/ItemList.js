@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import { CheckoutConsumer } from './CheckoutContext';
 import itemArray from './itemArray';
 import Item from './Item';
 
@@ -13,9 +14,17 @@ class ItemList extends Component {
 
     render() {
         return (
-            <ListWrapper>
-                { this.state.items.map( item => <Item key={item.id} item={item} /> ) }
-            </ListWrapper>
+            <CheckoutConsumer>
+                {
+                    ({ addItem }) => (
+                        <ListWrapper>
+                            { this.state.items.map( 
+                                item => <Item key={item.id} item={item} onClick={addItem} /> 
+                            ) }
+                        </ListWrapper>
+                    )
+                }
+            </CheckoutConsumer>
         );
     }
 }

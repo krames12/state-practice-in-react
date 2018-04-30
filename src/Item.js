@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { CheckoutConsumer } from './CheckoutContext';
 
 class Item extends Component {
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
         this.state = {
             qty: 0,
             price: 0
@@ -13,7 +14,11 @@ class Item extends Component {
 
     render() {
         return(
-            <ItemSquare>{this.props.item.name}</ItemSquare>
+            <CheckoutConsumer>
+                {
+                    ({ addItem }) => <ItemSquare onClick={addItem} key={this.props.item.id} >{this.props.item.name}</ItemSquare>
+                }
+            </CheckoutConsumer>
         )
     }
 }

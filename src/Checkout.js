@@ -5,12 +5,6 @@ import CheckoutItem from './CheckoutItem'
 import ProductList from './itemArray';
 
 class Checkout extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    state = {};
-
     render() {
         return (
             <CheckoutContainer id="checkout-container">
