@@ -14,20 +14,17 @@ class CheckoutProvider extends Component {
           }
         ],
       }
-    
+
       addItem = (item) => {
-          console.log("item", item);
-        let newItem = {
-            "name": item.name,
-            "qty": 1,
-        }
-    
         this.setState({ cartItems: [
             ...this.state.cartItems,
-            newItem
+            {
+                ...item,
+                "qty": 1,
+            }
         ] });
       }
-    
+
     render() {
         return(
             <Provider value={{
