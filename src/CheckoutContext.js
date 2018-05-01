@@ -39,7 +39,6 @@ class CheckoutProvider extends Component {
       }
 
       qtyIncrement = (item) => {
-          console.log("item", item);
         let revisedCart = this.state.cartItems.map( (cartItem) => {
             if(cartItem.id === item.id) {
                 cartItem.qty++;
@@ -51,18 +50,24 @@ class CheckoutProvider extends Component {
                 return cartItem;
             }
         });
-        console.log("revised:", revisedCart);
+        
         this.setState({ cartItems: revisedCart });
       }
 
       qtyDecrement = (item) => {
-        this.setState({ cartItems: [
-            ...this.state.cartItems,
-            {
-                ...item,
-                "qty": item.qty - 1
+        let revisedCart = this.state.cartItems.map( (cartItem) => {
+            if(cartItem.id === item.id) {
+                cartItem.qty--;
+                return {
+                    ...cartItem,
+                    qty: cartItem.qty,
+                }
+            } else {
+                return cartItem;
             }
-        ] });
+        });
+        
+        this.setState({ cartItems: revisedCart });
       }
 
     render() {
