@@ -14,20 +14,16 @@ class CheckoutProvider extends Component {
             if(cartItem.id === item.id) {
                 newItem = false;
                 cartItem.qty++;
-                let newPrice = item.price * cartItem.qty;
-                console.log("item price:", item.price, "cart qty:", cartItem.qty, "new price", newPrice);
 
                 return {
                     qty: cartItem.qty,
                     ...cartItem,
-                    price: newPrice,
+                    price: item.price * cartItem.qty,
                 };
             } else {
                 return cartItem;
             }
-        });
-
-        console.log(revisedCart);   
+        });  
 
         if(newItem) {
             revisedCart = [
