@@ -21,7 +21,7 @@ class CheckoutItem extends Component {
                         <button
                             onClick={ () => actions.qtyDecrement(this.props) } 
                         >-</button> | 
-                        <span className="line-price">&#36;{this.props.price} </span>
+                        <span className="line-price">&#36;{this.props.lineTotal} </span>
                     </ItemContainer>
                 ) }
             </CheckoutConsumer>

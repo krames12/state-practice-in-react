@@ -16,9 +16,9 @@ class CheckoutProvider extends Component {
                 cartItem.qty++;
 
                 return {
-                    qty: cartItem.qty,
                     ...cartItem,
-                    price: item.price * cartItem.qty,
+                    qty: cartItem.qty,
+                    lineTotal: item.price * cartItem.qty,
                 };
             } else {
                 return cartItem;
@@ -31,6 +31,7 @@ class CheckoutProvider extends Component {
                 {
                     ...item,
                     "qty": 1,
+                    "lineTotal": item.price,
                 }
             ]
         }
@@ -45,6 +46,7 @@ class CheckoutProvider extends Component {
                 return {
                     ...cartItem,
                     qty: cartItem.qty,
+                    lineTotal: cartItem.price * cartItem.qty,
                 }
             } else {
                 return cartItem;
@@ -61,6 +63,7 @@ class CheckoutProvider extends Component {
                 return {
                     ...cartItem,
                     qty: cartItem.qty,
+                    lineTotal: cartItem.price * cartItem.qty,
                 }
             } else {
                 return cartItem;
