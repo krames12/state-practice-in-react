@@ -13,14 +13,21 @@ class CheckoutProvider extends Component {
         let revisedCart = this.state.cartItems.map( (cartItem) => {
             if(cartItem.id === item.id) {
                 newItem = false;
+                cartItem.qty++;
+                let newPrice = item.price * cartItem.qty;
+                console.log("item price:", item.price, "cart qty:", cartItem.qty, "new price", newPrice);
+
                 return {
-                    qty: cartItem.qty++,
+                    qty: cartItem.qty,
                     ...cartItem,
+                    price: newPrice,
                 };
             } else {
                 return cartItem;
             }
         });
+
+        console.log(revisedCart);   
 
         if(newItem) {
             revisedCart = [
