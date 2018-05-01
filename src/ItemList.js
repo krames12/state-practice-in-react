@@ -16,13 +16,13 @@ class ItemList extends Component {
         return (
             <CheckoutConsumer>
                 {
-                    ({ addItem }) => (
+                    ({ actions }) => (
                         <ListWrapper>
                             { this.state.items.map(
                                 item => <Item
                                             key={item.id}
                                             name={item.name}
-                                            clickHandler={() => addItem(item)}
+                                            clickHandler={() => actions.addItem(item)}
                                         />
                             ) }
                         </ListWrapper>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CheckoutConsumer } from './CheckoutContext';
 import styled from 'styled-components';
 
 class CheckoutItem extends Component {
@@ -8,9 +9,15 @@ class CheckoutItem extends Component {
 
     render() {
         return (
-            <ItemContainer>
-                {this.props.name} - {this.props.qty} - <span className="line-price">&#36;{this.props.price}</span>
-            </ItemContainer>
+            <CheckoutConsumer>
+                { ({ actions }) => (
+
+                    <ItemContainer>
+                    {this.props.name} | 
+                    <button onClick={ () => actions.qtyIncrement(this.props) }>+</button> {this.props.qty} <button >-</button> | <span className="line-price">&#36;{this.props.price} </span>
+                    </ItemContainer>
+                ) }
+            </CheckoutConsumer>
         )
     }
 }

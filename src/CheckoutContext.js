@@ -39,13 +39,18 @@ class CheckoutProvider extends Component {
       }
 
       qtyIncrement = (item) => {
-        this.setState({ cartItems: [
-            ...this.state.cartItems,
-            {
-                ...item,
-                "qty": item.qty + 1
+          console.log("item", item);
+        let revisedCart = this.state.cartItems.map( (cartItem) => {
+            if(cartItem.id === item.id) {
+                cartItem.qty++;
+                return {
+                    ...cartItem,
+                    qty: cartItem.qty,
+                }
             }
-        ] });
+        });
+        console.log("revised:", revisedCart);
+        this.setState({ cartItems: revisedCart });
       }
 
       qtyDecrement = (item) => {
@@ -62,7 +67,11 @@ class CheckoutProvider extends Component {
         return(
             <Provider value={{
                 items: this.state.cartItems,
-                addItem: this.addItem,
+                actions: {
+                    addItem: this.addItem,
+                    qtyIncrement: this.qtyIncrement,
+                    qtyDecrement: this.qtyDecrement,
+                }
             }}>
                 {this.props.children}
             </Provider>
