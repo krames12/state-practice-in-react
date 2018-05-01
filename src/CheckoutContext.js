@@ -47,6 +47,8 @@ class CheckoutProvider extends Component {
                     ...cartItem,
                     qty: cartItem.qty,
                 }
+            } else {
+                return cartItem;
             }
         });
         console.log("revised:", revisedCart);
