@@ -16,7 +16,7 @@ class Item extends Component {
         return(
             <ItemSquare
                 key={this.props.id}
-                onClick={() => this.props.clickHandler}
+                onClick={() => this.props.clickHandler()}
             >
             {this.props.name}
             </ItemSquare>
