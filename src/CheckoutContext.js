@@ -5,22 +5,52 @@ const { Consumer, Provider } = React.createContext(CONTEXT_ID);
 
 class CheckoutProvider extends Component {
     state = {
-        cartItems: [
-          {
-              "id": 0,
-              "name": "Giant Sweet Tarts",
-              "price": "3.22",
-              "qty": 1
-          }
-        ],
+        cartItems: [],
       }
 
       addItem = (item) => {
+        let newItem = true;
+        let revisedCart = this.state.cartItems.map( (cartItem) => {
+            if(cartItem.id === item.id) {
+                newItem = false;
+                return {
+                    qty: cartItem.qty++,
+                    ...cartItem,
+                };
+            } else {
+                return cartItem;
+            }
+        });
+
+        if(newItem) {
+            revisedCart = [
+                ...revisedCart,
+                {
+                    ...item,
+                    "qty": 1,
+                }
+            ]
+        }
+
+        this.setState({ cartItems: revisedCart });
+      }
+
+      qtyIncrement = (item) => {
         this.setState({ cartItems: [
             ...this.state.cartItems,
             {
                 ...item,
-                "qty": 1,
+                "qty": item.qty + 1
+            }
+        ] });
+      }
+
+      qtyDecrement = (item) => {
+        this.setState({ cartItems: [
+            ...this.state.cartItems,
+            {
+                ...item,
+                "qty": item.qty - 1
             }
         ] });
       }
