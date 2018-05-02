@@ -23,7 +23,7 @@ class CheckoutProvider extends Component {
             } else {
                 return cartItem;
             }
-        });  
+        });
 
         if(newItem) {
             revisedCart = [
@@ -52,12 +52,16 @@ class CheckoutProvider extends Component {
                 return cartItem;
             }
         });
-        
+
         this.setState({ cartItems: revisedCart });
       }
 
       qtyDecrement = (item) => {
-        let revisedCart = this.state.cartItems.map( (cartItem) => {
+        let revisedCart = this.state.cartItems.filter( (cartItem) => {
+            if(cartItem.id != item.id || (cartItem.id === item.id && cartItem.qty - 1 > 0)) {
+                return cartItem;
+            }
+        } ).map( (cartItem) => {
             if(cartItem.id === item.id) {
                 cartItem.qty--;
                 return {
@@ -69,7 +73,7 @@ class CheckoutProvider extends Component {
                 return cartItem;
             }
         });
-        
+
         this.setState({ cartItems: revisedCart });
       }
 

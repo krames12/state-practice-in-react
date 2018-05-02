@@ -13,14 +13,13 @@ class CheckoutItem extends Component {
                 { ({ actions }) => (
 
                     <ItemContainer>
-                        {this.props.name} | 
-                        <button 
-                            onClick={ () => actions.qtyIncrement(this.props) }
-                        >+</button> 
-                        {this.props.qty} 
+                        {this.props.name} |
                         <button
-                            onClick={ () => actions.qtyDecrement(this.props) } 
-                        >-</button> | 
+                            onClick={ () => actions.qtyIncrement(this.props) }
+                        >+</button> {this.props.qty}
+                        <button
+                            onClick={ () => actions.qtyDecrement(this.props) }
+                        >-</button> |
                         <span className="line-price">&#36;{this.props.lineTotal} </span>
                     </ItemContainer>
                 ) }
