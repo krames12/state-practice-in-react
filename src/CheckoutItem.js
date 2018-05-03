@@ -13,13 +13,17 @@ class CheckoutItem extends Component {
                 { ({ actions }) => (
 
                     <ItemContainer>
-                        {this.props.name} |
-                        <button
-                            onClick={ () => actions.qtyIncrement(this.props) }
-                        >+</button> {this.props.qty}
-                        <button
-                            onClick={ () => actions.qtyDecrement(this.props) }
-                        >-</button> |
+                        <div className="checkout-name">
+                            {this.props.name}
+                        </div>
+                        <div className="checkout-qty">
+                            <button
+                                onClick={ () => actions.qtyIncrement(this.props) }
+                                >+</button> {this.props.qty}
+                            <button
+                                onClick={ () => actions.qtyDecrement(this.props) }
+                            >-</button>
+                        </div>
                         <span className="line-price">&#36;{this.props.lineTotal} </span>
                     </ItemContainer>
                 ) }
@@ -33,4 +37,6 @@ export default CheckoutItem;
 const ItemContainer = styled.div`
     padding: 10px 5px;
     border-bottom: 1px solid grey;
+    display: grid;
+    grid-template-columns repeat(3, 1fr);
 `

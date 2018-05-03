@@ -10,7 +10,7 @@ class App extends Component {
         <CheckoutProvider>
           <div className="App">
               <header>
-                <h1>Nick's Item State</h1>
+                <h2>Nick's Item State</h2>
               </header>
                 <ItemList />
                 <Checkout />

@@ -1,16 +1,17 @@
 .App {
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px repeat(3, 1fr);
 }
 
 header {
-  width: 100%;
   background: #5c9ead;
   color: white;
-  grid-row: 1;
-  grid-column: 1 / 4;
+  grid-column: 1 /-1;
 }
 
-header h1 {
+header h2 {
   margin-left: 20px;
+  margin-top: 10px;
 }
