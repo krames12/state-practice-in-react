@@ -22,7 +22,6 @@ class Checkout extends Component {
 export default Checkout;
 
 const CheckoutContainer = styled.div`
-    grid-row: 2 / span 2;
     border: 1px solid #999;
     overflow-y: scroll;
 `

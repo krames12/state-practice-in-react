@@ -15,6 +15,7 @@ class Item extends Component {
     render() {
         return(
             <ItemSquare
+                className="item"
                 key={this.props.id}
                 onClick={() => this.props.clickHandler()}
             >
