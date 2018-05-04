@@ -57,9 +57,13 @@ header h2 {
   padding: 15px 5px;
   border-bottom: 1px solid var(--light-grey);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr 1fr;
   justify-items: center;
   align-items: center;
+}
+
+.checkout-item-container > .checkout-name {
+  text-align: left;
 }
 
 .qty-button {
