@@ -12,6 +12,7 @@
     "item-list item-list checkout"
     "item-list item-list checkout"
     "item-list item-list checkout"
+    "item-list item-list checout-totals"
 }
 
 header {
@@ -28,11 +29,13 @@ header h2 {
 .item-container {
   display: grid;
   padding: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+  overflow-y: scroll;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: repeat(6, minmax(100px, 1fr));
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
-  grid-area: item-list
+  grid-area: item-list;
+  grid-auto-rows: minmax(150px, 1fr);
 }
 
 .item {
@@ -48,4 +51,21 @@ header h2 {
 
 #checkout-container {
   grid-area: checkout;
+}
+
+.checkout-item-container {
+  padding: 15px 5px;
+  border-bottom: 1px solid var(--light-grey);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.qty-button {
+  background: none;
+  padding: 5px;
+  margin: 0 5px;
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
 }
