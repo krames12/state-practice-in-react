@@ -77,6 +77,16 @@ class CheckoutProvider extends Component {
         this.setState({ cartItems: revisedCart });
       }
 
+      removeItem = (item) => {
+          let revisedCart = this.state.cartItems.filter( (cartItem) => {
+            if(cartItem.id != item.id) {
+                return cartItem;
+            }
+          });
+
+          this.setState({ cartItems: revisedCart });
+      }
+
     render() {
         return(
             <Provider value={{
@@ -85,6 +95,7 @@ class CheckoutProvider extends Component {
                     addItem: this.addItem,
                     qtyIncrement: this.qtyIncrement,
                     qtyDecrement: this.qtyDecrement,
+                    removeItem: this.removeItem,
                 }
             }}>
                 {this.props.children}

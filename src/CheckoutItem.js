@@ -13,6 +13,9 @@ class CheckoutItem extends Component {
                 { ({ actions }) => (
 
                     <div className="checkout-item-container">
+                        <div
+                            onClick={ () => actions.removeItem(this.props) }
+                        >X</div>
                         <div className="checkout-name">
                             {this.props.name}
                         </div>
