@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { CheckoutConsumer } from './CheckoutContext';
 
 class Item extends Component {
     constructor(props, context) {

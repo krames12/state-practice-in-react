@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ItemList from './ItemList';
 import Checkout from './Checkout';
-import CheckoutProvider, { CheckoutConsumer } from './CheckoutContext';
+import CheckoutProvider from './CheckoutContext';
 import './App.css';
 
 class App extends Component {

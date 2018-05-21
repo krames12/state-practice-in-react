@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { CheckoutConsumer } from './CheckoutContext';
-import styled from 'styled-components';
 
 class CheckoutItem extends Component {
     constructor(props) {

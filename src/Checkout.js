@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import { CheckoutConsumer } from './CheckoutContext';
 import CheckoutItem from './CheckoutItem'
-import ProductList from './itemArray';
 
 class Checkout extends Component {
     render() {
