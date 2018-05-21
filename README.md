@@ -1,3 +1,18 @@
+## React practice project
+The goal of this project is to learn how to manipulate state in React and translate that to other components with a point of sales application.
+
+I am using the new Context API as opposed to pulling in Redux or any of the other heavy state management packages due to this being such a simple app.
+
+To get up and running after cloning the repo:
+```
+npm install
+npm start
+```
+
+That's it!
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
