@@ -13,6 +13,7 @@ class CheckoutItem extends Component {
 
                     <div className="checkout-item-container">
                         <div
+                            className="delete-icon"
                             onClick={ () => actions.removeItem(this.props) }
                         >X</div>
                         <div className="checkout-name">
