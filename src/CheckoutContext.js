@@ -6,75 +6,79 @@ const { Consumer, Provider } = React.createContext(CONTEXT_ID);
 class CheckoutProvider extends Component {
     state = {
         cartItems: [],
+        total: 0.00,
       }
 
     addItem = (item) => {
-    let newItem = true;
-    let revisedCart = this.state.cartItems.map( (cartItem) => {
-        if(cartItem.id === item.id) {
-            newItem = false;
-            cartItem.qty++;
+        let newItem = true;
+        let revisedCart = this.state.cartItems.map( (cartItem) => {
+            if(cartItem.id === item.id) {
+                newItem = false;
+                cartItem.qty++;
 
-            return {
-                ...cartItem,
-                qty: cartItem.qty,
-                lineTotal: item.price * cartItem.qty,
-            };
-        } else {
-            return cartItem;
-        }
-    });
-
-    if(newItem) {
-        revisedCart = [
-            ...revisedCart,
-            {
-                ...item,
-                "qty": 1,
-                "lineTotal": item.price,
+                return {
+                    ...cartItem,
+                    qty: cartItem.qty,
+                    lineTotal: item.price * cartItem.qty,
+                };
+            } else {
+                return cartItem;
             }
-        ]
-    }
+        });
 
-    this.setState({ cartItems: revisedCart });
+        if(newItem) {
+            revisedCart = [
+                ...revisedCart,
+                {
+                    ...item,
+                    "qty": 1,
+                    "lineTotal": item.price,
+                }
+            ]
+        }
+
+        this.setState({ cartItems: revisedCart });
+        this.updateTotal(revisedCart);
     }
 
     qtyIncrement = (item) => {
-    let revisedCart = this.state.cartItems.map( (cartItem) => {
-        if(cartItem.id === item.id) {
-            cartItem.qty++;
-            return {
-                ...cartItem,
-                qty: cartItem.qty,
-                lineTotal: cartItem.price * cartItem.qty,
+        let revisedCart = this.state.cartItems.map( (cartItem) => {
+            if(cartItem.id === item.id) {
+                cartItem.qty++;
+                return {
+                    ...cartItem,
+                    qty: cartItem.qty,
+                    lineTotal: cartItem.price * cartItem.qty,
+                }
+            } else {
+                return cartItem;
             }
-        } else {
-            return cartItem;
-        }
-    });
+        });
 
-    this.setState({ cartItems: revisedCart });
+        this.setState({ cartItems: revisedCart });
+        this.updateTotal(revisedCart);
     }
 
     qtyDecrement = (item) => {
-    let revisedCart = this.state.cartItems.filter( (cartItem) => {
-        if(cartItem.id != item.id || (cartItem.id === item.id && cartItem.qty - 1 > 0)) {
-            return cartItem;
-        }
-    } ).map( (cartItem) => {
-        if(cartItem.id === item.id) {
-            cartItem.qty--;
-            return {
-                ...cartItem,
-                qty: cartItem.qty,
-                lineTotal: cartItem.price * cartItem.qty,
+        let revisedCart = this.state.cartItems.filter( (cartItem) => {
+            if(cartItem.id != item.id || (cartItem.id === item.id && cartItem.qty - 1 > 0)) {
+                return cartItem;
             }
-        } else {
-            return cartItem;
-        }
-    });
+        } ).map( (cartItem) => {
+            if(cartItem.id === item.id) {
+                cartItem.qty--;
+                return {
+                    ...cartItem,
+                    qty: cartItem.qty,
+                    lineTotal: cartItem.price * cartItem.qty,
+                }
+            } else {
+                return cartItem;
+            }
+        });
 
-    this.setState({ cartItems: revisedCart });
+        this.setState({ cartItems: revisedCart });
+        this.updateTotal(revisedCart);
     }
 
     removeItem = (item) => {
@@ -85,6 +89,16 @@ class CheckoutProvider extends Component {
         });
 
         this.setState({ cartItems: revisedCart });
+        this.updateTotal(revisedCart);
+    }
+
+    updateTotal = (cartArray) => {
+        let newTotal = 0;
+        cartArray.forEach( (item) => {
+            newTotal += item.price * item.qty;
+        } );
+
+        this.setState({ total: newTotal.toFixed(2) });
     }
 
     render() {
