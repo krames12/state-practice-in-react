@@ -7,7 +7,7 @@ class CheckoutTotals extends Component {
             <div id="checkout-totals-container">
                 <CheckoutConsumer.Consumer>
                     { ({total}) => (
-                        <p>{total}</p>
+                        <button className="pay-total-button">Pay Total: {total}</button>
                     ) }
                 </CheckoutConsumer.Consumer>
             </div>

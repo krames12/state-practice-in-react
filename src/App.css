@@ -73,3 +73,20 @@ header h2 {
   border: 1px solid var(--light-grey);
   border-radius: 5px;
 }
+
+#checkout-totals-container {
+  grid-area: checkout-totals;
+  padding: 10px;
+}
+
+.pay-total-button {
+  padding: 10px;
+  background-color: #6FCF97;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 2em;
+  width: 80%;
+  justify-content: center;
+  align-content: center;
+}
