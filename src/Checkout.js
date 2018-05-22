@@ -12,7 +12,6 @@ class Checkout extends Component {
                             product => <CheckoutItem key={product.id} {...product} />
                      ) }
                 </CheckoutConsumer.Consumer>
-
             </CheckoutContainer>
         )
     }

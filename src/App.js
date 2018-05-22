@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ItemList from './ItemList';
 import Checkout from './Checkout';
+import CheckoutTotals from './CheckoutTotals';
 import CheckoutProvider from './CheckoutContext';
 import './App.css';
 
@@ -14,6 +15,7 @@ class App extends Component {
               </header>
                 <ItemList />
                 <Checkout />
+                <CheckoutTotals />
             </div>
         </CheckoutProvider>
     );

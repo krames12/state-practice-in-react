@@ -105,6 +105,7 @@ class CheckoutProvider extends Component {
         return(
             <Provider value={{
                 items: this.state.cartItems,
+                total: this.state.total,
                 actions: {
                     addItem: this.addItem,
                     qtyIncrement: this.qtyIncrement,
