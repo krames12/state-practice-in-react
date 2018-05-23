@@ -3,6 +3,8 @@ import ItemList from './ItemList';
 import Checkout from './Checkout';
 import CheckoutTotals from './CheckoutTotals';
 import CheckoutProvider from './CheckoutContext';
+import Categories from "./Categories";
+import { categories } from "./itemArray";
 import './App.css';
 
 class App extends Component {
@@ -13,9 +15,10 @@ class App extends Component {
               <header>
                 <h2>Nick's Item State</h2>
               </header>
-                <ItemList />
-                <Checkout />
-                <CheckoutTotals />
+              <Categories categories={categories} />
+              <ItemList />
+              <Checkout />
+              <CheckoutTotals />
             </div>
         </CheckoutProvider>
     );

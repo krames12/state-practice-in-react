@@ -74,3 +74,10 @@ const itemArray = [
 ];
 
 export default itemArray;
+
+export const categories = [
+    "All",
+    "Drink",
+    "Food",
+    "Misc"
+]

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CheckoutConsumer } from './CheckoutContext';
-import itemArray from './itemArray';
+import itemArray, { categories } from './itemArray';
 import Item from './Item';
 
 class ItemList extends Component {
@@ -8,6 +8,7 @@ class ItemList extends Component {
         super(props);
         this.state = {
             "items": itemArray,
+            "categories": categories,
         }
     }
 

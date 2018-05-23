@@ -12,9 +12,10 @@
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50px repeat(4, 1fr);
+  grid-template-rows: 50px 40px repeat(4, 1fr);
   grid-template-areas:
     "header header header"
+    "categories categories checkout"
     "item-list item-list checkout"
     "item-list item-list checkout"
     "item-list item-list checkout"
@@ -32,8 +33,26 @@ header h2 {
   margin-top: 10px;
 }
 
+.category-container {
+  grid-area: categories;
+  border-bottom: 1px solid var(--light-grey);
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(6, auto);
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.category-container > .category {
+  padding: 10px;
+  border-right: 1px solid var(--light-grey);
+  text-align: center;
+}
+
 .item-container {
   display: grid;
+  margin: 0;
   padding: 1rem;
   overflow-y: scroll;
   grid-template-columns: repeat(5, minmax(100px, 1fr));
@@ -49,6 +68,7 @@ header h2 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   min-width: 50px;
+  min-height: 100px;
   padding: 1rem;
   border: 1px solid var(--light-grey);
   border-radius: 5px;
