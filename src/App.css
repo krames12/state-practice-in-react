@@ -58,12 +58,19 @@ header h2 {
   border-bottom: 1px solid var(--light-grey);
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr;
-  justify-items: center;
   align-items: center;
 }
 
 .checkout-item-container > .checkout-name {
   text-align: left;
+}
+
+.checkout-item-container > .line-price {
+  text-align: right;
+}
+
+.checkout-item-container > .delete-icon, .checkout-item-container > .checkout-qty {
+  text-align: center;
 }
 
 .qty-button {
