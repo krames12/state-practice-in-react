@@ -2,6 +2,12 @@
   --light-grey: #E0E0E0;
 }
 
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 .App {
   height: 100vh;
   display: grid;
@@ -83,17 +89,38 @@ header h2 {
 
 #checkout-totals-container {
   grid-area: checkout-totals;
+  margin: 0;
+}
+
+.totals-container {
+  width: 100%;
+  height: 62%;
+  padding: 1.5em 5em;
+}
+
+.totals-container > p {
+  margin: 0;
   padding: 10px;
+  width: 100%;
+  font-size: 1.5em;
+  clear: both;
+}
+
+.totals-container .total-title-text {
+  float: left;
+}
+
+.totals-container .total-amount-text {
+  float: right;
 }
 
 .pay-total-button {
-  padding: 10px;
+  padding: .75em;
   background-color: #6FCF97;
   color: white;
   border: none;
-  border-radius: 5px;
   font-size: 2em;
-  width: 80%;
+  width: 100%;
   justify-content: center;
   align-content: center;
 }
