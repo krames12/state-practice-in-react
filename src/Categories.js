@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Category from './Category';
 
 class Categories extends Component {
     constructor(props) {
@@ -8,11 +9,15 @@ class Categories extends Component {
         };
     }
 
+    changeCategory = (category) => {
+        this.setState({ selected: category })
+    }
+
     render() {
         return(
             <div className="category-container">
                 { this.props.categories.map(
-                    category => <div className="category">{category}</div>
+                    category => <Category category={category} action={this.changeCategory} />
                 ) }
             </div>
         )
