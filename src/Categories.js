@@ -10,7 +10,7 @@ class Categories extends Component {
     }
 
     changeCategory = (category) => {
-        this.setState({ selected: category })
+        this.setState({ selected: category });
     }
 
     render() {

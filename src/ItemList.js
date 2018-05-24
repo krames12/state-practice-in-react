@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CheckoutConsumer } from './CheckoutContext';
+import Categories from "./Categories";
 import itemArray, { categories } from './itemArray';
 import Item from './Item';
 
@@ -8,27 +9,30 @@ class ItemList extends Component {
         super(props);
         this.state = {
             "items": itemArray,
-            "categories": categories,
+            "category": "All",
         }
     }
 
     render() {
         return (
-            <CheckoutConsumer>
-                {
-                    ({ actions }) => (
-                        <div className="item-container">
-                            { this.state.items.map(
-                                item => <Item
-                                            key={item.id}
-                                            name={item.name}
-                                            clickHandler={() => actions.addItem(item)}
-                                        />
-                            ) }
-                        </div>
-                    )
-                }
-            </CheckoutConsumer>
+            <React.Fragment>
+                <Categories categories={categories} />
+                <CheckoutConsumer>
+                    {
+                        ({ actions }) => (
+                            <div className="item-container">
+                                { this.state.items.map(
+                                    item => <Item
+                                    key={item.id}
+                                    name={item.name}
+                                    clickHandler={() => actions.addItem(item)}
+                                    />
+                                ) }
+                            </div>
+                        )
+                    }
+                </CheckoutConsumer>
+            </React.Fragment>
         );
     }
 }

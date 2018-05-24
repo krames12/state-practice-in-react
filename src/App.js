@@ -15,7 +15,6 @@ class App extends Component {
               <header>
                 <h2>Nick's Item State</h2>
               </header>
-              <Categories categories={categories} />
               <ItemList />
               <Checkout />
               <CheckoutTotals />
