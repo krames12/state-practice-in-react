@@ -33,7 +33,12 @@ class ItemList extends Component {
             <React.Fragment>
                 <div className="category-container">
                     { categories.map(
-                        category => <Category key={category.id} category={category.name} action={this.changeCategory} />
+                        category => <Category
+                                        key={category.id}
+                                        category={category.name}
+                                        action={this.changeCategory}
+                                        selected={this.state.category === category.name? "selected" : ""}
+                                    />
                     ) }
                 </div>
                 <CheckoutConsumer>

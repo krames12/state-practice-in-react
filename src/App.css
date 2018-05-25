@@ -1,5 +1,6 @@
 :root {
   --light-grey: #E0E0E0;
+  --dark-grey: #7B7B7B;
 }
 
 * {
@@ -44,10 +45,23 @@ header h2 {
   margin: 0;
 }
 
-.category-container > .category {
+.category {
+  cursor: pointer;
   padding: 10px;
   border-right: 1px solid var(--light-grey);
   text-align: center;
+  color: var(--dark-grey);
+  transition: all 0.2s ease-in-out;
+}
+
+.category:hover {
+  background-color: var(--light-grey);
+  color: var(--dark-grey);
+}
+
+.category.selected {
+  background-color: var(--dark-grey);
+  color: white;
 }
 
 .item-container {

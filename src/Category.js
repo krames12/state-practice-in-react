@@ -4,7 +4,7 @@ class Category extends Component {
     render() {
         return(
             <div
-                className="category"
+                className={`category ${ this.props.selected }`}
                 onClick={() => this.props.action(this.props.category)}
             >
                 {this.props.category}
