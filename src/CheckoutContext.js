@@ -61,7 +61,7 @@ class CheckoutProvider extends Component {
 
     qtyDecrement = (item) => {
         let revisedCart = this.state.cartItems.filter( (cartItem) => {
-            if(cartItem.id != item.id || (cartItem.id === item.id && cartItem.qty - 1 > 0)) {
+            if(cartItem.id !== item.id || (cartItem.id === item.id && cartItem.qty - 1 > 0)) {
                 return cartItem;
             }
         } ).map( (cartItem) => {
@@ -83,7 +83,7 @@ class CheckoutProvider extends Component {
 
     removeItem = (item) => {
         let revisedCart = this.state.cartItems.filter( (cartItem) => {
-        if(cartItem.id != item.id) {
+        if(cartItem.id !== item.id) {
             return cartItem;
         }
         });

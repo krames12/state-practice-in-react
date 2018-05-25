@@ -76,8 +76,20 @@ const itemArray = [
 export default itemArray;
 
 export const categories = [
-    "All",
-    "Drink",
-    "Food",
-    "Misc"
+    {
+        "id": 1,
+        "name": "All",
+    },
+    {
+        "id": 2,
+        "name": "Drink",
+    },
+    {
+        "id": 3,
+        "name": "Food",
+    },
+    {
+        "id": 4,
+        "name": "Misc",
+    }
 ]

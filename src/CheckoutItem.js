@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { CheckoutConsumer } from './CheckoutContext';
 
 class CheckoutItem extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <CheckoutConsumer>

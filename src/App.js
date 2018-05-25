@@ -3,8 +3,6 @@ import ItemList from './ItemList';
 import Checkout from './Checkout';
 import CheckoutTotals from './CheckoutTotals';
 import CheckoutProvider from './CheckoutContext';
-import Categories from "./Categories";
-import { categories } from "./itemArray";
 import './App.css';
 
 class App extends Component {
