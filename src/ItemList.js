@@ -3,6 +3,7 @@ import { CheckoutConsumer } from './CheckoutContext';
 import Category from "./Category";
 import itemArray, { categories } from './itemArray';
 import Item from './Item';
+import Search from './Search';
 
 class ItemList extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class ItemList extends Component {
                                     />
                     ) }
                 </div>
+                <Search />
                 <CheckoutConsumer>
                     {
                         ({ actions }) => (

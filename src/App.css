@@ -16,7 +16,7 @@
   grid-template-rows: 45px 39px repeat(4, 1fr);
   grid-template-areas:
     "header header header"
-    "categories categories checkout"
+    "categories categories search"
     "item-list item-list checkout"
     "item-list item-list checkout"
     "item-list item-list checkout"
@@ -65,6 +65,11 @@ header h2 {
   color: white;
 }
 
+#search-container {
+  grid-area: search;
+  border-bottom: 1px solid var(--light-grey);
+}
+
 .item-container {
   display: grid;
   margin: 0;
@@ -98,7 +103,7 @@ header h2 {
   padding: 15px 5px;
   border-bottom: 1px solid var(--light-grey);
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 40px 2fr 115px 1fr;
   align-items: center;
 }
 
@@ -110,16 +115,14 @@ header h2 {
   text-align: right;
 }
 
-.checkout-item-container > .delete-icon, .checkout-item-container > .checkout-qty {
+.delete-icon, .checkout-qty {
   text-align: center;
 }
 
 .qty-button {
-  background: none;
+  border: none;
+  background-color: white;
   padding: 5px;
-  margin: 0 5px;
-  border: 1px solid var(--light-grey);
-  border-radius: 5px;
 }
 
 #checkout-totals-container {
