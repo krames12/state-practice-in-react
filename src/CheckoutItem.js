@@ -13,7 +13,7 @@ class CheckoutItem extends Component {
                             className="delete-icon"
                             onClick={ () => actions.removeItem(this.props) }
                         >
-                            <Trash2 />
+                            <Trash2 className="icon" />
                         </div>
                         <div className="checkout-name">
                             {this.props.name}
@@ -23,14 +23,14 @@ class CheckoutItem extends Component {
                                 className="qty-button"
                                 onClick={ () => actions.qtyIncrement(this.props) }
                             >
-                                <PlusCircle />
+                                <PlusCircle className="icon" />
                             </button>
-                            <span className="checkout-quantity-text">{this.props.qty}</span>
+                            <span className="checkout-qty-text">{this.props.qty}</span>
                             <button
                                 className="qty-button"
                                 onClick={ () => actions.qtyDecrement(this.props) }
                             >
-                                <MinusCircle />
+                                <MinusCircle className="icon"/>
                             </button>
                         </div>
                         <span className="line-price">&#36;{this.props.lineTotal.toFixed(2)} </span>
