@@ -29,6 +29,13 @@ class ItemList extends Component {
         this.setState({ items: itemList });
     }
 
+    searchItemList = (search) => {
+        let itemList = itemArray.filter( item =>
+            item.name.toLowerCase().includes(search.toLowerCase()) ? item : false
+        );
+        this.setState({ items: itemList });
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -42,7 +49,7 @@ class ItemList extends Component {
                                     />
                     ) }
                 </div>
-                <Search />
+                <Search itemSearch={this.searchItemList} />
                 <CheckoutConsumer>
                     {
                         ({ actions }) => (
