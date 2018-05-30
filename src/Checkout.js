@@ -20,6 +20,5 @@ class Checkout extends Component {
 export default Checkout;
 
 const CheckoutContainer = styled.div`
-    border: 1px solid #999;
     overflow-y: scroll;
 `
