@@ -83,9 +83,7 @@ class CheckoutProvider extends Component {
 
     removeItem = (item) => {
         let revisedCart = this.state.cartItems.filter( (cartItem) => {
-        if(cartItem.id !== item.id) {
-            return cartItem;
-        }
+            return cartItem.id !== item.id ? cartItem : false;
         });
 
         this.setState({ cartItems: revisedCart });
